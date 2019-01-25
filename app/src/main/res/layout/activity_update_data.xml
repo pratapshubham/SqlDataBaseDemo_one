@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CreateDatabaseActivity"
+    tools:context="com.example.braintech.sqldatabasedemo.EmployeeActivity"
     android:background="@color/SkyBlue">
 
     <TextView
@@ -115,13 +115,15 @@
                 android:drawablePadding="10dp"
                 />
             <Button
-                android:id="@+id/btnAdduser"
+                android:id="@+id/btnUpdation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/editTextAddressupdate"
-                android:layout_centerInParent="true"
+                android:layout_centerHorizontal="true"
                 android:layout_marginTop="43dp"
-                android:text="@string/updateUser" />
+                android:text="@string/updateUser"
+                android:background="@drawable/button_rounded"
+                />
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

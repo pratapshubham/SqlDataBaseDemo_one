@@ -1,5 +1,6 @@
 package com.example.braintech.sqldatabasedemo;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
@@ -25,7 +26,7 @@ TextView viewAllUser;
         getId();
         sqLiteDatabase = openOrCreateDatabase("Employee",MODE_PRIVATE,null);//build the database connection;
 
-       // createTable(); //create the database table;
+       createTable();
 
         AddUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,19 +41,19 @@ TextView viewAllUser;
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CreateDatabaseActivity.this,EmployeeActivity.class));
-                finish();
             }
         });
     }
 
     public void createTable()
     {
-        sqLiteDatabase.execSQL("create table employees (Username varchar(100),Mobile INTEGER,ADDRESS varchar(100))" +
-                "");
+        sqLiteDatabase.execSQL("create table if not exists employees (id INTEGER PRIMARY KEY"+
+                ",Username varchar(100),Mobile INTEGER,ADDRESS varchar(100))");
     }
 
     public void inserData()
     {
+
         User = username.getText().toString();
         Phone = mobile.getText().toString();
         Address = address.getText().toString();
@@ -63,8 +64,14 @@ TextView viewAllUser;
                     "VALUES \n" +
                     "(?, ?, ?);";
             sqLiteDatabase.execSQL(insertSQL,new String[]{User, Phone, Address});
+            /*AlertDialog alertDialog = null;
+            alertDialog = new AlertDialog.Builder(CreateDatabaseActivity.this).create();
+            alertDialog.setTitle("Message");
+            alertDialog.setMessage("Employee Added Successfully");
+            alertDialog.setCancelable(true);
+            alertDialog.show();*/
             Toast.makeText(this,"Data Added Successfully",Toast.LENGTH_SHORT).show();
-            sqLiteDatabase.close();
+            //sqLiteDatabase.close();
         }
     }
 

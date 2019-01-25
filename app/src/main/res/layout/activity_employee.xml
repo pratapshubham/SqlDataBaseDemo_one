@@ -5,11 +5,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EmployeeActivity">
+    tools:context="com.example.braintech.sqldatabasedemo.EmployeeActivity">
 
     <ListView
         android:id="@+id/listViewEmployees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/textViewEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:textColor="@color/Red"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        />
 
 </RelativeLayout>

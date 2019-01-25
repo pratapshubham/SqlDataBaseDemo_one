@@ -1,140 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:weightSum="3"
     android:layout_height="match_parent"
-    tools:context=".CreateDatabaseActivity"
-    android:background="@color/SkyBlue">
-
-<TextView
-    android:id="@+id/textViewAddUser"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/AddUser"
-    android:layout_centerHorizontal="true"
-    android:layout_marginTop="20dp"
-    android:textSize="20sp"
-    android:textColor="@color/MediumBlue"
-    android:drawableLeft="@drawable/username"
-    android:drawablePadding="10dp"
-    android:textStyle="bold"
-    />
-    <ScrollView
+    android:background="@color/SkyBlue"
+    tools:context="com.example.braintech.sqldatabasedemo.CreateDatabaseActivity">
+    <RelativeLayout
+        android:id="@+id/child_one"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true"
-        >
-
+        android:layout_weight="1"
+         >
+        <TextView
+            android:id="@+id/textViewAddUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/AddUser"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:layout_margin="10dp"
+            android:textColor="@color/Crimson"
+            android:textAlignment="center"
+            />
+    </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/child_two"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textViewAddUser"
-        android:layout_margin="10dp"
-        >
-        <TextView
-            android:id="@+id/textViewUserName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/USERNAME"
-           android:textColor="@color/colorAccent"
-            android:textSize="20sp"
-            android:layout_marginTop="50dp"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/editTextUsername"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+       android:background="@color/SkyBlue" >
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/textViewUserName"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/rounded"
-            android:layout_marginLeft="10dp"
-            android:padding="5dp"
-            android:hint="Enter Username"
-            android:textColorHint="@color/Green"
-            android:drawableLeft="@drawable/username"
-            android:drawablePadding="10dp"
-            android:maxLines="1"
-            />
-        <TextView
-            android:id="@+id/textViewMobile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/mobile"
-            android:layout_marginTop="25dp"
-            android:layout_below="@+id/textViewUserName"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/editTextMobile"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/textViewMobile"
-            android:layout_below="@+id/editTextUsername"
-            android:background="@drawable/rounded"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:layout_marginLeft="45dp"
-            android:hint="Enter Mobile"
-            android:textColorHint="@color/Green"
-            android:drawableLeft="@drawable/phone"
-            android:drawablePadding="10dp"
-            android:inputType="number"
-            android:maxLength="10"
-            />
-        <TextView
-            android:id="@+id/textViewAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/address"
-            android:layout_below="@+id/textViewMobile"
-            android:layout_marginTop="25dp"
-            android:textSize="20sp"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
-        <EditText
-            android:id="@+id/editTextAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/textViewAddress"
-            android:layout_below="@+id/editTextMobile"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded"
-            android:layout_marginLeft="31dp"
-            android:padding="5dp"
-            android:hint="Enter Address"
-            android:textColorHint="@color/Green"
-            android:drawableLeft="@drawable/address"
-            android:drawablePadding="10dp"
-            />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/textViewUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/USERNAME"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:textColor="@color/Green"
+                    />
+                <TextView
+                    android:id="@+id/textViewMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/mobile"
+                    android:textColor="@color/Green"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textViewAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewMobile"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/address"
+                    android:textColor="@color/Green"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <EditText
+                    android:id="@+id/editTextUsername"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded"
+                    android:padding="5dp"
+                    android:hint="UserName"
+                    android:maxLines="1"
+                    android:textColorHint="@color/Green"
+                    />
+                <EditText
+                    android:id="@+id/editTextMobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextUsername"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded"
+                    android:padding="5dp"
+                    android:hint="Phone"
+                    android:textColorHint="@color/Green"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    />
+                <EditText
+                    android:id="@+id/editTextAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/editTextMobile"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded"
+                    android:padding="5dp"
+                    android:hint="Address"
+                    android:textColorHint="@color/Green"
+                    android:maxLines="1"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/child_twos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/SkyBlue">
 
         <Button
             android:id="@+id/btnAdduser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTextAddress"
             android:layout_centerInParent="true"
-            android:layout_marginTop="43dp"
+            android:background="@drawable/mybtn"
             android:text="@string/AddUser" />
+
         <TextView
             android:id="@+id/textViewAllUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/btnAdduser"
+            android:layout_alignParentBottom="true"
             android:text="@string/viewalluser"
+            android:textColor="@color/Red"
             android:textSize="20sp"
-            android:layout_below="@+id/btnAdduser"
-            android:layout_marginTop="20dp"
-            android:layout_centerInParent="true"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            />
+            android:textStyle="bold" />
     </RelativeLayout>
-    </ScrollView>
-</RelativeLayout>
+
+
+</LinearLayout>
